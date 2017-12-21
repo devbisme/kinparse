@@ -67,17 +67,17 @@ def _parse_netlist_kicad(text):
     anystring = qstring ^ string
 
     # Design section.
-    source = _paren_clause('source', anystring)
-    date = _paren_clause('date', anystring)
-    tool = _paren_clause('tool', anystring)
+    source = _paren_clause('source', Optional(anystring))
+    date = _paren_clause('date', Optional(anystring))
+    tool = _paren_clause('tool', Optional(anystring))
     number = _paren_clause('number', inum)
     name = _paren_clause('name', anystring)
     names = _paren_clause('names', anystring)
     tstamp = _paren_clause('tstamp', anystring)
     tstamps = _paren_clause('tstamps', anystring)
-    title = _paren_clause('title', anystring)
-    company = _paren_clause('company', anystring)
-    rev = _paren_clause('rev', fnum)
+    title = _paren_clause('title', Optional(anystring))
+    company = _paren_clause('company', Optional(anystring))
+    rev = _paren_clause('rev', Optional(fnum))
     value = _paren_clause('value', anystring)
     comment = Group(_paren_clause('comment', number & value))
     comments = Group(OneOrMore(comment))('comments')
