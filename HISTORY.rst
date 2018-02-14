@@ -4,6 +4,12 @@ History
 -------
 
 
+0.0.3 (2018-02-14)
+______________________
+
+* Non-numeric revision is now allowed in the netlist rev field.
+
+
 0.0.2 (2017-12-21)
 ______________________
 

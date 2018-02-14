@@ -1,35 +1,34 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>kinparse 0.0.1 documentation</title>
-    
+    <title>kinparse 0.0.3 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.0.1',
+        VERSION:     '0.0.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="None" href="index.html#document-index" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index.html#document-index">kinparse 0.0.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html#document-index">kinparse 0.0.3 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -39,15 +38,15 @@
           <div class="body" role="main">
             
   <div class="section" id="welcome-to-kinparse-s-documentation">
-<h1>Welcome to kinparse&#8217;s documentation!<a class="headerlink" href="#welcome-to-kinparse-s-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>Welcome to kinparse’s documentation!<a class="headerlink" href="#welcome-to-kinparse-s-documentation" title="Permalink to this headline">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <span id="document-readme"></span><div class="section" id="kinparse">
 <h2>kinparse<a class="headerlink" href="#kinparse" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://pypi.python.org/pypi/kinparse"><img src="https://img.shields.io/pypi/v/kinparse.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/kinparse"><img alt="https://img.shields.io/pypi/v/kinparse.svg" src="https://img.shields.io/pypi/v/kinparse.svg" /></a>
 <p>This is a parser for KiCad schematic netlist files that are output by EESCHEMA.
 Just pass the <cite>parse_netlist()</cite> function a file containing a netlist and
-it will deliver a <a class="reference external" href="https://pypi.python.org/pypi/pyparsing">pyparsing object</a> containing all the netlist&#8217;s information.</p>
+it will deliver a <a class="reference external" href="https://pypi.python.org/pypi/pyparsing">pyparsing object</a> containing all the netlist’s information.</p>
 <ul class="simple">
 <li>Free software: MIT license</li>
 <li>Documentation: <a class="reference external" href="http://xesscorp.github.io/kinparse">http://xesscorp.github.io/kinparse</a></li>
@@ -55,9 +54,9 @@ it will deliver a <a class="reference external" href="https://pypi.python.org/py
 </div>
 <span id="document-installation"></span><div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>This is a Python package, so you&#8217;ll need to have Python installed to use it.
-If you&#8217;re using linux, you probably already have Python.
-If you&#8217;re on Windows, you can download a Python installer from
+<p>This is a Python package, so you’ll need to have Python installed to use it.
+If you’re using linux, you probably already have Python.
+If you’re on Windows, you can download a Python installer from
 <a class="reference external" href="https://www.continuum.io/downloads#windows">Anaconda</a> ,
 <a class="reference external" href="https://www.activestate.com/activepython/downloads">Active State</a> , or even
 <a class="reference external" href="http://winpython.github.io/#releases">WinPython</a> .</p>
@@ -83,10 +82,10 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 </pre></div>
 </div>
 <p>Then you can query the parsing object as shown below to get information about the netlist.</p>
-<ul>
+<ul class="simple">
 <li><dl class="first docutils">
 <dt>Global netlist information:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li><code class="docutils literal"><span class="pre">nlst.version.val</span></code>: Netlist format version.</li>
 </ul>
 </dd>
@@ -94,7 +93,7 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 </li>
 <li><dl class="first docutils">
 <dt>Global design information:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li><code class="docutils literal"><span class="pre">nlst.design.source.val</span></code>: File name for the schematic that generated this netlist.</li>
 <li><code class="docutils literal"><span class="pre">nlst.design.date.val</span></code>: Date the schematic was created.</li>
 <li><code class="docutils literal"><span class="pre">nlst.design.tool.val</span></code>: Tool used to create the schematic.</li>
@@ -104,7 +103,7 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 </li>
 <li><dl class="first docutils">
 <dt>Schematic sheet information:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li><code class="docutils literal"><span class="pre">nlst.design.sheets</span></code>: List of sheets for the schematic.</li>
 <li><code class="docutils literal"><span class="pre">nlst.design.sheets[0].number.val</span></code>: Number of the first schematic sheet.</li>
 <li><code class="docutils literal"><span class="pre">nlst.design.sheets[0].name.val</span></code>: Name of the first schematic sheet.</li>
@@ -123,7 +122,7 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 </li>
 <li><dl class="first docutils">
 <dt>Library information:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li><code class="docutils literal"><span class="pre">nlst.libraries</span></code>: List of libraries used in the netlist.</li>
 <li><code class="docutils literal"><span class="pre">nlst.libraries[0].logical.val</span></code>: Logical name of first library.</li>
 <li><code class="docutils literal"><span class="pre">nlst.libraries[0].uri.val</span></code>: File name and location of first library.</li>
@@ -133,7 +132,7 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 </li>
 <li><dl class="first docutils">
 <dt>Components:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li><code class="docutils literal"><span class="pre">nlst.components</span></code>: List of components (or parts).</li>
 <li><code class="docutils literal"><span class="pre">nlst.components[0].ref.val</span></code>: Reference for the first component.</li>
 <li><code class="docutils literal"><span class="pre">nlst.components[0].value.val</span></code>: Value of the first component.</li>
@@ -153,7 +152,7 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 </li>
 <li><dl class="first docutils">
 <dt>Library descriptions of components:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li><code class="docutils literal"><span class="pre">nlst.libparts</span></code>: List of part (or component) descriptions.</li>
 <li><code class="docutils literal"><span class="pre">nlst.libparts[0].lib.val</span></code>: Library containing the first component.</li>
 <li><code class="docutils literal"><span class="pre">nlst.libparts[0].part.val</span></code>: Part number of the first component.</li>
@@ -176,7 +175,7 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 </li>
 <li><dl class="first docutils">
 <dt>Net connections:</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li><code class="docutils literal"><span class="pre">nlst.nets</span></code>: List of nets.</li>
 <li><code class="docutils literal"><span class="pre">nlst.nets[0].name.val</span></code>: Name of the first net.</li>
 <li><code class="docutils literal"><span class="pre">nlst.nets[0].code.val</span></code>: Code number for the first net.</li>
@@ -208,12 +207,12 @@ little bit helps, and credit will always be given.</p>
 </div>
 <div class="section" id="fix-bugs">
 <h4>Fix Bugs<a class="headerlink" href="#fix-bugs" title="Permalink to this headline">¶</a></h4>
-<p>Look through the GitHub issues for bugs. Anything tagged with &#8220;bug&#8221;
+<p>Look through the GitHub issues for bugs. Anything tagged with “bug”
 is open to whoever wants to implement it.</p>
 </div>
 <div class="section" id="implement-features">
 <h4>Implement Features<a class="headerlink" href="#implement-features" title="Permalink to this headline">¶</a></h4>
-<p>Look through the GitHub issues for features. Anything tagged with &#8220;feature&#8221;
+<p>Look through the GitHub issues for features. Anything tagged with “feature”
 is open to whoever wants to implement it.</p>
 </div>
 <div class="section" id="write-documentation">
@@ -236,7 +235,7 @@ are welcome :)</li>
 </div>
 <div class="section" id="get-started">
 <h3>Get Started!<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h3>
-<p>Ready to contribute? Here&#8217;s how to set up <cite>kinparse</cite> for local development.</p>
+<p>Ready to contribute? Here’s how to set up <cite>kinparse</cite> for local development.</p>
 <ol class="arabic">
 <li><p class="first">Fork the <cite>kinparse</cite> repo on GitHub.</p>
 </li>
@@ -258,7 +257,7 @@ $ python setup.py develop
 </div>
 <p>Now you can make your changes locally.</p>
 </li>
-<li><p class="first">When you&#8217;re done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox:</p>
+<li><p class="first">When you’re done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ flake8 kinparse tests
 $ python setup.py test
 $ tox
@@ -312,7 +311,19 @@ feature to the list in README.rst.</li>
 <span id="document-history"></span><div class="section" id="history">
 <h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>0.0.3 (2018-02-14)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Non-numeric revision is now allowed in the netlist rev field.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>0.0.2 (2017-12-21)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Fixed parse errors caused by fields with labels but no data like “(date)” .</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>First release on PyPI.</li>
 </ul>
@@ -353,7 +364,9 @@ feature to the list in README.rst.</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-history">History</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id1">0.0.1 (2017-07-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">0.0.3 (2018-02-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">0.0.2 (2017-12-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">0.0.1 (2017-07-12)</a></li>
 </ul>
 </li>
 </ul>
@@ -365,12 +378,12 @@ feature to the list in README.rst.</li>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index.html#document-index">kinparse 0.0.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html#document-index">kinparse 0.0.3 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2017, XESS Corp..
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &#169; Copyright 2017, XESS Corp..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

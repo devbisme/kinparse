@@ -77,7 +77,7 @@ def _parse_netlist_kicad(text):
     tstamps = _paren_clause('tstamps', anystring)
     title = _paren_clause('title', Optional(anystring))
     company = _paren_clause('company', Optional(anystring))
-    rev = _paren_clause('rev', Optional(fnum))
+    rev = _paren_clause('rev', Optional(anystring))
     value = _paren_clause('value', anystring)
     comment = Group(_paren_clause('comment', number & value))
     comments = Group(OneOrMore(comment))('comments')
