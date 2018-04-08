@@ -46,7 +46,7 @@ setup(
     author_email= email,
     url='https://github.com/xesscorp/kinparse',
 #    packages=['kinparse',],
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=['tests']),
     entry_points={'console_scripts':['kinparse = kinparse.__main__:main']},
     package_dir={'kinparse':
                  'kinparse'},
