@@ -4,6 +4,12 @@ History
 -------
 
 
+0.0.4 (2018-08-27)
+______________________
+
+* KiCad V5 started putting description fields in component libsource.
+
+
 0.0.3 (2018-02-14)
 ______________________
 

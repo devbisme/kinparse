@@ -97,7 +97,8 @@ def _parse_netlist_kicad(text):
     lib = _paren_clause('lib', anystring)
     part = _paren_clause('part', anystring)
     footprint = _paren_clause('footprint', anystring)
-    libsource = _paren_clause('libsource', lib & part)
+    description = _paren_clause('description', anystring)  # Gets used here and in libparts.
+    libsource = _paren_clause('libsource', lib & part & Optional(description))
     sheetpath = _paren_clause('sheetpath', names & tstamps)
     comp = Group(_paren_clause('comp', ref & value & Optional(datasheet) & 
                     Optional(fields) & Optional(libsource) & Optional(footprint) & 
@@ -105,7 +106,6 @@ def _parse_netlist_kicad(text):
     components = _paren_clause('components', ZeroOrMore(comp))
 
     # Part library section.
-    description = _paren_clause('description', anystring)
     docs = _paren_clause('docs', anystring)
     pnum = _paren_clause('num', anystring)
     ptype = _paren_clause('type', anystring)

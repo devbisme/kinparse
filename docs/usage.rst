@@ -51,6 +51,7 @@ Then you can query the parsing object as shown below to get information about th
     * ``nlst.components[0].fields[0].text``: Value assigned to first field of the first component.
     * ``nlst.components[0].libsource.lib.val``: Library containing the first component.
     * ``nlst.components[0].libsource.part.val``: Part name for the first component.
+    * ``nlst.components[0].libsource.description.val``: Description for the first component.
     * ``nlst.components[0].footprint.val``: PCB footprint for the first component.
     * ``nlst.components[0].sheetpath.names.val``: Sheet name on which the first component appears.
     * ``nlst.components[0].sheetpath.tstamps.val``: Time stamp for the sheet on which the first component appears.
