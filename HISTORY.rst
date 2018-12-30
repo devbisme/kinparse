@@ -4,6 +4,12 @@ History
 -------
 
 
+0.0.5 (2018-12-30)
+______________________
+
+* Restricted pyparsing package to version < 2.3.0 because that one started breaking things.
+
+
 0.0.4 (2018-08-27)
 ______________________
 

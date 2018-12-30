@@ -7,7 +7,7 @@ import setuptools
 
 author = 'XESS Corp.'
 email = 'info@xess.com'
-version = '0.0.4'
+version = '0.0.5'
 
 if 'sdist' in sys.argv[1:]:
     with open('kinparse/pckg_info.py','w') as f:
@@ -29,7 +29,7 @@ with open('HISTORY.rst') as history_file:
 requirements = [
     # Put package requirements here
     'future >= 0.15.0',
-    'pyparsing',
+    'pyparsing < 2.3.0',
 ]
 
 test_requirements = [
