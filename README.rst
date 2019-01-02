@@ -4,7 +4,8 @@ kinparse
 
 .. image:: https://img.shields.io/pypi/v/kinparse.svg
         :target: https://pypi.python.org/pypi/kinparse
-
+.. image:: https://travis-ci.com/xesscorp/kinparse.svg?branch=master
+    :target: https://travis-ci.com/xesscorp/kinparse
 
 This is a parser for KiCad schematic netlist files that are output by EESCHEMA.
 Just pass the `parse_netlist()` function a file containing a netlist and
