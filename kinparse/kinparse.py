@@ -89,8 +89,8 @@ def _parse_netlist_kicad(text):
                         Optional(date) & Optional(source) & comments)
     sheet = _paren_clause('sheet', Group(number + name + tstamps + Optional(title_block)))
     sheets = OneOrMore(sheet)('sheets')
-    design = Group(_paren_clause('design', Optional(source) & Optional(date) &
-                        Optional(tool) & Optional(sheets)))('design')
+    design = (_paren_clause('design', Optional(source) & Optional(date) &
+                        Optional(tool) & Optional(sheets)))
 
     # Components section.
     ref = _paren_clause('ref', anystring('ref'))
