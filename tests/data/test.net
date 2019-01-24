@@ -10,7 +10,7 @@
         (rev 2)
         (date 2016-05-20)
         (source StickIt-AudioIO.sch)
-        (comment (number 4) (value "")))))
+        (comment (number 4) (value "comment text...")))))
   (components
     (comp (ref STK1)
       (value STICKIT2_HDR)

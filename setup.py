@@ -7,7 +7,7 @@ import setuptools
 
 author = 'XESS Corp.'
 email = 'info@xess.com'
-version = '0.0.5'
+version = '0.1.0'
 
 if 'sdist' in sys.argv[1:]:
     with open('kinparse/pckg_info.py','w') as f:
@@ -29,7 +29,7 @@ with open('HISTORY.rst') as history_file:
 requirements = [
     # Put package requirements here
     'future >= 0.15.0',
-    'pyparsing < 2.3.0',
+    'pyparsing >= 2.1.1',
 ]
 
 test_requirements = [
@@ -56,7 +56,7 @@ setup(
     install_requires=requirements,
     license="MIT",
     zip_safe=False,
-    keywords='kinparse',
+    keywords='kinparse KiCad netlist parsing',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -65,6 +65,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)',
     ],
     test_suite='tests',

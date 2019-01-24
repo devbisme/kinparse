@@ -4,6 +4,12 @@ History
 -------
 
 
+0.1.0 (2019-01-24)
+______________________
+
+* Restructured the parser to make it work with the current version of pyparsing.
+
+
 0.0.5 (2018-12-30)
 ______________________
 
