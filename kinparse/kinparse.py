@@ -81,9 +81,6 @@ def _parse_netlist_kicad(text):
     txt = _paren_clause('value', anystring('text'))
     comment = _paren_clause('comment', Group(number & txt))
     comments = Group(OneOrMore(comment))('comments')
-    # title_block = Group(_paren_clause('title_block', Optional(title) &
-                        # Optional(company) & Optional(rev) &
-                        # Optional(date) & Optional(source) & comments))('title_block')
     title_block = _paren_clause('title_block', Optional(title) &
                         Optional(company) & Optional(rev) &
                         Optional(date) & Optional(source) & comments)
