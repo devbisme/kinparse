@@ -4,7 +4,7 @@ from .setup_teardown import *
 
 def isstr(s):
     print(s)
-    assert(isinstance(s,str))
+    assert(isinstance(s,(type(u"A"), type("A"), type(""))))
 
 def parser_tests(ntlst):
     isstr(ntlst.version)
