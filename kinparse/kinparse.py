@@ -64,7 +64,7 @@ def _parse_netlist_kicad(text):
     string = ZeroOrMore(White()).suppress() + CharsNotIn('()') + ZeroOrMore(White()).suppress()
     qstring = dblQuotedString() ^ sglQuotedString()
     qstring.addParseAction(removeQuotes)
-    anystring = Optional(qstring ^ string)
+    anystring = Optional(qstring ^ string) # Don't know why Optional() is necessary to make the parser work.
 
     # Design section.
     source = _paren_clause('source', Optional(anystring)('source'))
