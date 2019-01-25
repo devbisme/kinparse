@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>kinparse 0.0.5 documentation</title>
+    <title>kinparse 0.1.0 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -21,7 +21,7 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index.html#document-index">kinparse 0.0.5 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html#document-index">kinparse 0.1.0 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -37,9 +37,11 @@
 <span id="document-readme"></span><div class="section" id="kinparse">
 <h2>kinparse<a class="headerlink" href="#kinparse" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/kinparse"><img alt="https://img.shields.io/pypi/v/kinparse.svg" src="https://img.shields.io/pypi/v/kinparse.svg" /></a>
+<a class="reference external image-reference" href="https://travis-ci.com/xesscorp/kinparse"><img alt="https://travis-ci.com/xesscorp/kinparse.svg?branch=master" src="https://travis-ci.com/xesscorp/kinparse.svg?branch=master" /></a>
 <p>This is a parser for KiCad schematic netlist files that are output by EESCHEMA.
-Just pass the <cite>parse_netlist()</cite> function a file containing a netlist and
-it will deliver a <a class="reference external" href="https://pypi.python.org/pypi/pyparsing">pyparsing object</a> containing all the netlist’s information.</p>
+Just pass a file containing a netlist to the <cite>parse_netlist()</cite> function and
+it will deliver a <a class="reference external" href="https://pypi.python.org/pypi/pyparsing">pyparsing object</a>
+containing all the netlist’s information.</p>
 <ul class="simple">
 <li>Free software: MIT license</li>
 <li>Documentation: <a class="reference external" href="http://xesscorp.github.io/kinparse">http://xesscorp.github.io/kinparse</a></li>
@@ -79,7 +81,7 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 <li><dl class="first docutils">
 <dt>Global netlist information:</dt>
 <dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">nlst.version.val</span></code>: Netlist format version.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.version</span></code>: Netlist format version.</li>
 </ul>
 </dd>
 </dl>
@@ -87,9 +89,9 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 <li><dl class="first docutils">
 <dt>Global design information:</dt>
 <dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.source.val</span></code>: File name for the schematic that generated this netlist.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.date.val</span></code>: Date the schematic was created.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.tool.val</span></code>: Tool used to create the schematic.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.source</span></code>: File name for the top-level schematic that generated this netlist.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.date</span></code>: Date the schematic was created.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.tool</span></code>: Tool used to create the schematic.</li>
 </ul>
 </dd>
 </dl>
@@ -97,18 +99,20 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 <li><dl class="first docutils">
 <dt>Schematic sheet information:</dt>
 <dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets</span></code>: List of sheets for the schematic.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].number.val</span></code>: Number of the first schematic sheet.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].name.val</span></code>: Name of the first schematic sheet.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].tstamps.val</span></code>: Time stamp of the first schematic sheet.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].title_block.title.val</span></code>: Title of the first schematic sheet.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].title_block.company.val</span></code>: Name of company.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].title_block.rev.val</span></code>: Design revision number.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].title_block.date.val</span></code>: Design date.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].title_block.source.val</span></code>: Design source file.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].title_block.comments</span></code>: List of comments.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].title_block.comments[0].number.val</span></code>: Number of the first comment.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.design.sheets[0].title_block.comments[0].value.val</span></code>: Text of the first comment.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets</span></code>: List of sheets for the schematic.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.sheets)</span></code>: Number of sheets in the list.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].num</span></code>: Number of the first schematic sheet.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].name</span></code>: Name of the first schematic sheet.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].tstamps</span></code>: Time stamp of the first schematic sheet.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].title</span></code>: Title of the first schematic sheet.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].company</span></code>: Name of company.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].rev</span></code>: Revision number of the first schematic sheet.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].date</span></code>: Date of the first schematic sheet.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].source</span></code>: Source file for the first schematic sheet.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].comments</span></code>: List of comments for the first schematic sheet.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.sheets[0].comments)</span></code>: Number of comments for the first schematic sheet.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].comments[0].num</span></code>: Number of the first comment.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.sheets[0].comments[0].text</span></code>: Text of the first comment.</li>
 </ul>
 </dd>
 </dl>
@@ -117,52 +121,60 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 <dt>Library information:</dt>
 <dd><ul class="first last">
 <li><code class="docutils literal notranslate"><span class="pre">nlst.libraries</span></code>: List of libraries used in the netlist.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libraries[0].logical.val</span></code>: Logical name of first library.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libraries[0].uri.val</span></code>: File name and location of first library.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.libraries)</span></code>: Number of libraries in the list.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libraries[0].name</span></code>: Name of the first library.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libraries[0].uri</span></code>: File location of the first library.</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Components:</dt>
+<dt>Library of components:</dt>
 <dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components</span></code>: List of components (or parts).</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].ref.val</span></code>: Reference for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].value.val</span></code>: Value of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].tstamp.val</span></code>: Time stamp for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].datasheet.val</span></code>: Location of datasheet for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].fields</span></code>: List of fields for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].fields[0].name.val</span></code>: Name of first field of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].fields[0].text</span></code>: Value assigned to first field of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].libsource.lib.val</span></code>: Library containing the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].libsource.part.val</span></code>: Part name for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].libsource.description.val</span></code>: Description for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].footprint.val</span></code>: PCB footprint for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].sheetpath.names.val</span></code>: Sheet name on which the first component appears.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.components[0].sheetpath.tstamps.val</span></code>: Time stamp for the sheet on which the first component appears.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts</span></code>: List of part types used in the netlist.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.libparts)</span></code>: Number of part types in the list.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].lib</span></code>: Library containing the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].name</span></code>: Part type name of the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].desc</span></code>: Description of the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].docs</span></code>: Document file name for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].fields</span></code>: List of fields for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.libparts[0].fields)</span></code>: Number of fields for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].fields[0].name</span></code>: Name of the first field of the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].fields[0].value</span></code>: Value assigned to the first field of the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].pins</span></code>: List of pins for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.libparts[0].pins)</span></code>: Number of pins on the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].pins[0].num</span></code>: Pin number of the first pin of the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].pins[0].name</span></code>: Pin name of the first pin of the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].pins[0].type</span></code>: Electrical type of the first pin of the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].footprints</span></code>: List of footprints for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.libparts[0].footprints)</span></code>: Number of footprints for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].footprints[0]</span></code>: First footprint for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].aliases</span></code>: List of aliases for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.libparts[0].aliases)</span></code>: List of aliases for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].aliases[0]</span></code>: First alias for the first part.</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Library descriptions of components:</dt>
+<dt>parts:</dt>
 <dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts</span></code>: List of part (or component) descriptions.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].lib.val</span></code>: Library containing the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].part.val</span></code>: Part number of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].description.val</span></code>: Description of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].docs.val</span></code>: Document file name for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].fields</span></code>: List of fields for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].fields[0].name.val</span></code>: Name of the first field of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].fields[0].text</span></code>: Value assigned to the first field of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].pins</span></code>: List of pins for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].pins[0].num.val</span></code>: Pin number of the first pin of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].pins[0].name.val</span></code>: Pin name of the first pin of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].pins[0].type.val</span></code>: Pin type of the first pin of the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].footprints</span></code>: List of footprints for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].footprints[0].fp.val</span></code>: First footprint for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].aliases</span></code>: List of aliases for the first component.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.libparts[0].aliases[0].text</span></code>: First alias for the first component.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts</span></code>: List of part instances used in the netlist.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.parts)</span></code>: Number of parts used in the list.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].ref</span></code>: Reference designator for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].value</span></code>: Value of the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].tstamp</span></code>: Time stamp for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].datasheet</span></code>: File location of datasheet for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].lib</span></code>: Name of the library containing the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].name</span></code>: Part type name for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].desc</span></code>: Description for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].footprint</span></code>: PCB footprint for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].sheetpath.names</span></code>: Sheet name on which the first part appears.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].sheetpath.tstamps</span></code>: Time stamp for the sheet on which the first part appears.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].fields</span></code>: List of fields for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.parts[0].fields)</span></code>: Number of fields for the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].fields[0].name</span></code>: Name of the first field of the first part.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].fields[0].value</span></code>: Value assigned to the first field of the first part.</li>
 </ul>
 </dd>
 </dl>
@@ -170,12 +182,14 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 <li><dl class="first docutils">
 <dt>Net connections:</dt>
 <dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">nlst.nets</span></code>: List of nets.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].name.val</span></code>: Name of the first net.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].code.val</span></code>: Code number for the first net.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].nodes</span></code>: List of nodes attached to the first net.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].nodes[0].ref.val</span></code>: Part reference for first node on the net.</li>
-<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].nodes[0].pin.val</span></code>: Pin number of part for the first node on the net.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.nets</span></code>: List of nets connecting the component pins.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.nets)</span></code>: Number of nets in the list.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].name</span></code>: Name of the first net.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].code</span></code>: Code number for the first net.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].pins</span></code>: List of pins attached to the first net.</li>
+<li><code class="docutils literal notranslate"><span class="pre">len(nlst.nets[0].pins)</span></code>: Number of pins attached to the first net.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].pins[0].ref</span></code>: Part reference designator for first pin on the first net.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nlst.nets[0].pins[0].num</span></code>: Pin number of referenced part for the first pin on the first net.</li>
 </ul>
 </dd>
 </dl>
@@ -305,31 +319,37 @@ feature to the list in README.rst.</li>
 <span id="document-history"></span><div class="section" id="history">
 <h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h3>0.0.5 (2018-12-30)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>0.1.0 (2019-01-24)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Restructured the parser to make it work with the current version of pyparsing.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>0.0.5 (2018-12-30)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Restricted pyparsing package to version &lt; 2.3.0 because that one started breaking things.</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h3>0.0.4 (2018-08-27)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>0.0.4 (2018-08-27)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>KiCad V5 started putting description fields in component libsource.</li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h3>0.0.3 (2018-02-14)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>0.0.3 (2018-02-14)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Non-numeric revision is now allowed in the netlist rev field.</li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h3>0.0.2 (2017-12-21)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>0.0.2 (2017-12-21)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Fixed parse errors caused by fields with labels but no data like “(date)” .</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>First release on PyPI.</li>
 </ul>
@@ -370,11 +390,12 @@ feature to the list in README.rst.</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-history">History</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id1">0.0.5 (2018-12-30)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id2">0.0.4 (2018-08-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id3">0.0.3 (2018-02-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id4">0.0.2 (2017-12-21)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id5">0.0.1 (2017-07-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">0.1.0 (2019-01-24)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">0.0.5 (2018-12-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">0.0.4 (2018-08-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">0.0.3 (2018-02-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">0.0.2 (2017-12-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id6">0.0.1 (2017-07-12)</a></li>
 </ul>
 </li>
 </ul>
@@ -386,7 +407,7 @@ feature to the list in README.rst.</li>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index.html#document-index">kinparse 0.0.5 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html#document-index">kinparse 0.1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
