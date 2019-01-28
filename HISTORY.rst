@@ -4,6 +4,12 @@ History
 -------
 
 
+0.1.1 (2019-01-28)
+______________________
+
+* Fixed problem where sheetpath.names and sheetpath.tstamps were not retrievable.
+
+
 0.1.0 (2019-01-24)
 ______________________
 

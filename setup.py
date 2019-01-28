@@ -7,7 +7,7 @@ import setuptools
 
 author = 'XESS Corp.'
 email = 'info@xess.com'
-version = '0.1.0'
+version = '0.1.1'
 
 if 'sdist' in sys.argv[1:]:
     with open('kinparse/pckg_info.py','w') as f:

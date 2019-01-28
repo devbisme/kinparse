@@ -74,3 +74,10 @@ def test_kinparse_3():
     ntlst = parse_netlist('data/ref2by2.net')
     assert len(ntlst.nets) == 4
     parser_tests(ntlst)
+
+def test_kinparse_4():
+    ntlst = parse_netlist('data/gaillard.net')
+    assert(ntlst.parts[0].sheetpath.names == "/Logic/")
+    assert(ntlst.parts[0].sheetpath.tstamps == "/5C4D0F9E/")
+    assert(ntlst.parts[0].tstamp == "5C4D541F")
+    parser_tests(ntlst)
