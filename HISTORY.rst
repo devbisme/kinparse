@@ -4,6 +4,12 @@ History
 -------
 
 
+0.1.2 (2019-02-23)
+______________________
+
+* Files are now opened with latin_1 encoding to allow special symbols used by KiCad.
+
+
 0.1.1 (2019-01-28)
 ______________________
 
