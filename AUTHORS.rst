@@ -5,9 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* XESS Corp. <info@xess.com>
+* Dave Vandenbout <devb@xess.com>
 
-Contributors
-------------
-
-None yet. Why not be the first?
+`Other Contributors <https://github.com/devbisme/kinparse/graphs/contributors>`_
+--------------------------------------------------------------------------------

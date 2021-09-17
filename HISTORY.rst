@@ -4,6 +4,12 @@ History
 -------
 
 
+1.0.0 (2021-09-17)
+------------------
+
+* Decided this tool was mature enough that it could be called 1.0.0.
+
+
 0.1.2 (2019-02-23)
 ______________________
 

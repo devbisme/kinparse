@@ -5,9 +5,9 @@ import sys
 import setuptools
 
 
-author = 'XESS Corp.'
-email = 'info@xess.com'
-version = '0.1.2'
+author = 'Dave Vandenbout'
+email = 'devb@xess.com'
+version = '1.0.0'
 
 if 'sdist' in sys.argv[1:]:
     with open('kinparse/pckg_info.py','w') as f:
@@ -44,7 +44,13 @@ setup(
     long_description=readme + '\n\n' + history,
     author = author,
     author_email= email,
-    url='https://github.com/xesscorp/kinparse',
+    url='https://github.com/devbisme/kinparse',
+    project_urls={
+        "Documentation": "https://devbisme.github.io/kinparse",
+        "Source": "https://github.com/devbisme/kinparse",
+        "Changelog": "https://github.com/devbisme/kinparse/blob/master/HISTORY.rst",
+        "Tracker": "https://github.com/devbisme/kinparse/issues",
+    },
 #    packages=['kinparse',],
     packages=setuptools.find_packages(exclude=['tests']),
     entry_points={'console_scripts':['kinparse = kinparse.__main__:main']},
@@ -58,16 +64,14 @@ setup(
     zip_safe=False,
     keywords='kinparse KiCad netlist parsing',
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Natural Language :: English',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)',
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
     ],
     test_suite='tests',
     tests_require=test_requirements
