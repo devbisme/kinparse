@@ -81,3 +81,10 @@ def test_kinparse_4():
     assert(ntlst.parts[0].sheetpath.tstamps == "/5C4D0F9E/")
     assert(ntlst.parts[0].tstamp == "5C4D541F")
     parser_tests(ntlst)
+
+def test_kinparse_5():
+    ntlst = parse_netlist('data/kicad6_test.net')
+    # assert(ntlst.parts[0].sheetpath.names == "/Logic/")
+    # assert(ntlst.parts[0].sheetpath.tstamps == "/5C4D0F9E/")
+    # assert(ntlst.parts[0].tstamp == "5C4D541F")
+    parser_tests(ntlst)
