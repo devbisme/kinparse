@@ -41,7 +41,7 @@ from pyparsing import *
 
 THIS_MODULE = locals()
 
-def _parse_netlist_kicad(text):
+def _parse_netlist_kicad5(text):
     """
     Return a pyparsing object storing the contents of a KiCad netlist.
     """
@@ -146,7 +146,116 @@ def _parse_netlist_kicad(text):
     return parser.parseString(text)
 
 
-def parse_netlist(src, tool='kicad'):
+def _parse_netlist_kicad6(text):
+    """
+    Return a pyparsing object storing the contents of a KiCad netlist.
+    """
+
+    def _paren_clause(keyword, subclause):
+        """
+        Create a parser for a parenthesized list with an initial keyword.
+        """
+        lp = Literal('(').suppress()
+        rp = Literal(')').suppress()
+        kw = CaselessKeyword(keyword).suppress()
+        clause = lp + kw + subclause + rp
+        return clause
+
+    #++++++++++++++++++++++++++++ Parser Definition +++++++++++++++++++++++++++
+
+    # Basic elements.
+    string = ZeroOrMore(White()).suppress() + CharsNotIn('()') + ZeroOrMore(White()).suppress()
+    qstring = dblQuotedString() ^ sglQuotedString()
+    qstring.addParseAction(removeQuotes)
+    anystring = Optional(qstring ^ string) # Don't know why Optional() is necessary to make the parser work.
+    word = anystring
+    inum = anystring
+
+    # Design section.
+    source = _paren_clause('source', Optional(anystring)('source'))
+    date = _paren_clause('date', Optional(anystring)('date'))
+    tool = _paren_clause('tool', Optional(anystring)('tool'))
+    number = _paren_clause('number', inum('num'))
+    name = _paren_clause('name', anystring('name'))
+    names = _paren_clause('names', anystring('names'))
+    value = _paren_clause('value', anystring('value'))
+    tstamp = _paren_clause('tstamp', anystring('tstamp'))
+    tstamps = _paren_clause('tstamps', anystring('tstamps'))
+    title = _paren_clause('title', Optional(anystring)('title'))
+    company = _paren_clause('company', Optional(anystring)('company'))
+    rev = _paren_clause('rev', Optional(anystring)('rev'))
+    txt = _paren_clause('value', anystring('text'))
+    comment = _paren_clause('comment', Group(number & txt))
+    comments = Group(OneOrMore(comment))('comments')
+    title_block = _paren_clause('title_block', Optional(title) &
+                        Optional(company) & Optional(rev) &
+                        Optional(date) & Optional(source) & comments)
+    sheet = _paren_clause('sheet', Group(number + name + tstamps + Optional(title_block)))
+    sheets = OneOrMore(sheet)('sheets')
+    design = (_paren_clause('design', Optional(source) & Optional(date) &
+                        Optional(tool) & Optional(sheets)))
+
+    # Components section.
+    ref = _paren_clause('ref', anystring('ref'))
+    datasheet = _paren_clause('datasheet', anystring('datasheet'))
+    field = Group(_paren_clause('field', name & anystring('value')))
+    fields = _paren_clause('fields', ZeroOrMore(field)('fields'))
+    property = _paren_clause('property', name & value)
+    properties = OneOrMore(property)('properties')
+    lib = _paren_clause('lib', anystring('lib'))
+    part = _paren_clause('part', anystring('name'))
+    footprint = _paren_clause('footprint', anystring('footprint'))
+    description = _paren_clause('description', anystring('desc'))  # Gets used here and in libparts.
+    libsource = _paren_clause('libsource', lib & part & Optional(description))
+    sheetpath = Group(_paren_clause('sheetpath', names & tstamps))('sheetpath')
+    comp = Group(_paren_clause('comp', ref & value & Optional(datasheet) & 
+                    Optional(fields) & Optional(libsource) & Optional(footprint) & 
+                    Optional(sheetpath) & Optional(tstamps | tstamp) & Optional(properties)))
+    components = _paren_clause('components', ZeroOrMore(comp)('parts'))
+
+    # Part library section.
+    docs = _paren_clause('docs', anystring('docs'))
+    pnum = _paren_clause('num', anystring('num'))
+    ptype = _paren_clause('type', anystring('type'))
+    pin = _paren_clause('pin', Group(pnum & name & ptype))
+    pins = _paren_clause('pins', ZeroOrMore(pin))('pins')
+    alias = _paren_clause('alias', anystring('alias'))
+    aliases = _paren_clause('aliases', ZeroOrMore(alias))('aliases')
+    fp = _paren_clause('fp', anystring('fp'))
+    footprints = _paren_clause('footprints', ZeroOrMore(fp))('footprints')
+    libpart = Group(_paren_clause('libpart', lib & part & Optional(
+        fields) & Optional(pins) & Optional(footprints) & Optional(aliases) &
+                                  Optional(description) & Optional(docs)))
+    libparts = _paren_clause('libparts', ZeroOrMore(libpart))('libparts')
+
+    # Libraries section.
+    logical = _paren_clause('logical', anystring('name'))
+    uri = _paren_clause('uri', anystring('uri'))
+    library = Group(_paren_clause('library', logical & uri))
+    libraries = _paren_clause('libraries', ZeroOrMore(library))('libraries')
+
+    # Nets section.
+    #code = _paren_clause('code', inum('val'))('code')
+    code = _paren_clause('code', inum('code'))
+    part_pin = _paren_clause('pin', anystring('num'))
+    pin_type = _paren_clause('pintype', anystring('type'))
+    pin_func = _paren_clause('pinfunction', anystring('function'))
+    node = _paren_clause('node', Group(ref & part_pin & Optional(pin_func) & Optional(pin_type)))
+    nodes = Group(OneOrMore(node))('pins')
+    net = _paren_clause('net', Group(code & name & nodes))
+    nets = _paren_clause('nets', ZeroOrMore(net))('nets')
+
+    # Entire netlist.
+    version = _paren_clause('version', word('version'))
+    end_of_file = ZeroOrMore(White()) + stringEnd
+    parser = _paren_clause('export', version +
+                (design & components & Optional(libparts) & Optional(libraries) & nets
+                )) + end_of_file.suppress()
+
+    return parser.parseString(text)
+
+
+def parse_netlist(src, tool='kicad6'):
     """
     Return a pyparsing object storing the contents of a netlist.
 
