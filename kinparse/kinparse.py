@@ -176,11 +176,9 @@ def _parse_netlist_kicad6(text):
     date = _paren_clause('date', Optional(anystring)('date'))
     tool = _paren_clause('tool', Optional(anystring)('tool'))
     number = _paren_clause('number', inum('num'))
-    name = _paren_clause('name', anystring('name'))
-    names = _paren_clause('names', anystring('names'))
+    name = _paren_clause('name', anystring('name')) | _paren_clause('names', anystring('names'))
     value = _paren_clause('value', anystring('value'))
-    tstamp = _paren_clause('tstamp', anystring('tstamp'))
-    tstamps = _paren_clause('tstamps', anystring('tstamps'))
+    tstamp = _paren_clause('tstamp', anystring('tstamp')) | _paren_clause('tstamps', anystring('tstamps'))
     title = _paren_clause('title', Optional(anystring)('title'))
     company = _paren_clause('company', Optional(anystring)('company'))
     rev = _paren_clause('rev', Optional(anystring)('rev'))
@@ -190,7 +188,7 @@ def _parse_netlist_kicad6(text):
     title_block = _paren_clause('title_block', Optional(title) &
                         Optional(company) & Optional(rev) &
                         Optional(date) & Optional(source) & comments)
-    sheet = _paren_clause('sheet', Group(number + name + tstamps + Optional(title_block)))
+    sheet = _paren_clause('sheet', Group(number + name + tstamp + Optional(title_block)))
     sheets = OneOrMore(sheet)('sheets')
     design = (_paren_clause('design', Optional(source) & Optional(date) &
                         Optional(tool) & Optional(sheets)))
@@ -207,10 +205,10 @@ def _parse_netlist_kicad6(text):
     footprint = _paren_clause('footprint', anystring('footprint'))
     description = _paren_clause('description', anystring('desc'))  # Gets used here and in libparts.
     libsource = _paren_clause('libsource', lib & part & Optional(description))
-    sheetpath = Group(_paren_clause('sheetpath', names & tstamps))('sheetpath')
+    sheetpath = Group(_paren_clause('sheetpath', name & tstamp))('sheetpath')
     comp = Group(_paren_clause('comp', ref & value & Optional(datasheet) & 
                     Optional(fields) & Optional(libsource) & Optional(footprint) & 
-                    Optional(sheetpath) & Optional(tstamps | tstamp) & Optional(properties)))
+                    Optional(sheetpath) & Optional(tstamp) & Optional(properties)))
     components = _paren_clause('components', ZeroOrMore(comp)('parts'))
 
     # Part library section.
@@ -223,9 +221,9 @@ def _parse_netlist_kicad6(text):
     aliases = _paren_clause('aliases', ZeroOrMore(alias))('aliases')
     fp = _paren_clause('fp', anystring('fp'))
     footprints = _paren_clause('footprints', ZeroOrMore(fp))('footprints')
-    libpart = Group(_paren_clause('libpart', lib & part & Optional(
-        fields) & Optional(pins) & Optional(footprints) & Optional(aliases) &
-                                  Optional(description) & Optional(docs)))
+    libpart = Group(_paren_clause('libpart', lib & part & Optional(fields) & 
+                Optional(pins) & Optional(footprints) & Optional(aliases) &
+                Optional(description) & Optional(docs)))
     libparts = _paren_clause('libparts', ZeroOrMore(libpart))('libparts')
 
     # Libraries section.
