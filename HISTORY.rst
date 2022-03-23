@@ -4,7 +4,7 @@ History
 -------
 
 
-1.1.0 (2022-02-17)
+1.1.0 (2022-03-23)
 ------------------
 
 * Updated to handle both KiCad V5 and V6 netlist files.
