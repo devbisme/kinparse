@@ -4,7 +4,7 @@ from .setup_teardown import *
 
 def isstr(s):
     print(s)
-    assert(isinstance(s, (type(u"A"), type("A"), type(""))))
+    assert isinstance(s, (type(u"A"), type("A"), type("")))
 
 def parser_tests(ntlst):
     isstr(ntlst.version)
@@ -77,14 +77,19 @@ def test_kinparse_3():
 
 def test_kinparse_4():
     ntlst = parse_netlist('data/gaillard.net')
-    assert(ntlst.parts[0].sheetpath.names == "/Logic/")
-    assert(ntlst.parts[0].sheetpath.tstamps == "/5C4D0F9E/")
-    assert(ntlst.parts[0].tstamp == "5C4D541F")
+    assert ntlst.parts[0].sheetpath.names == "/Logic/"
+    assert ntlst.parts[0].sheetpath.tstamps == "/5C4D0F9E/"
+    assert ntlst.parts[0].tstamp == "5C4D541F"
     parser_tests(ntlst)
 
 def test_kinparse_5():
+    ntlst = parse_netlist('data/kicad5_test.net')
+    assert len(ntlst.parts) == 6
+    assert len(ntlst.nets) == 6
+    parser_tests(ntlst)
+
+def test_kinparse_6():
     ntlst = parse_netlist('data/kicad6_test.net')
-    # assert(ntlst.parts[0].sheetpath.names == "/Logic/")
-    # assert(ntlst.parts[0].sheetpath.tstamps == "/5C4D0F9E/")
-    # assert(ntlst.parts[0].tstamp == "5C4D541F")
+    assert len(ntlst.parts) == 6
+    assert len(ntlst.nets) == 6
     parser_tests(ntlst)
