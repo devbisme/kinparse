@@ -5,13 +5,13 @@ History
 
 
 1.1.0 (2022-03-23)
-------------------
+______________________
 
 * Updated to handle both KiCad V5 and V6 netlist files.
 
 
 1.0.0 (2021-09-17)
-------------------
+______________________
 
 * Decided this tool was mature enough that it could be called 1.0.0.
 

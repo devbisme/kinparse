@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kinparse 1.0.0 documentation</title>
+    <title>kinparse 1.1.0a documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -20,8 +20,8 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">kinparse 1.0.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">kinparse 1.0.0 documentation</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">kinparse 1.1.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">kinparse 1.1.0a documentation</a></li> 
       </ul>
     </div>  
 
@@ -37,7 +37,7 @@
 <span id="document-readme"></span><div class="section" id="kinparse">
 <h2>kinparse<a class="headerlink" href="#kinparse" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/kinparse"><img alt="https://img.shields.io/pypi/v/kinparse.svg" src="https://img.shields.io/pypi/v/kinparse.svg" /></a>
-<p>This is a parser for KiCad V5 schematic netlist files that are output by EESCHEMA.
+<p>This is a parser for KiCad V5 and V6 schematic netlist files that are output by EESCHEMA.
 Just pass a file containing a netlist to the <cite>parse_netlist()</cite> function and
 it will deliver a <a class="reference external" href="https://pypi.python.org/pypi/pyparsing">pyparsing object</a>
 containing all the netlist’s information.</p>
@@ -256,13 +256,11 @@ $ python setup.py develop
 </div>
 <p>Now you can make your changes locally.</p>
 </li>
-<li><p>When you’re done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ flake8 kinparse tests
-$ python setup.py test
-$ tox
+<li><p>When you’re done making changes, check that your changes pass the tests, including testing other Python versions with tox:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tox
 </pre></div>
 </div>
-<p>To get flake8 and tox, just pip install them into your virtualenv.</p>
+<p>To get tox, just pip install it into your virtualenv.</p>
 </li>
 <li><p>Commit your changes and push your branch to GitHub:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add .
@@ -278,19 +276,12 @@ $ git push origin name-of-your-bugfix-or-feature
 <h3>Pull Request Guidelines<a class="headerlink" href="#pull-request-guidelines" title="Permalink to this headline">¶</a></h3>
 <p>Before you submit a pull request, check that it meets these guidelines:</p>
 <ol class="arabic simple">
-<li><p>The pull request should include tests.</p></li>
+<li><p>The pull request should include tests if you’ve added functionality.</p></li>
 <li><p>If the pull request adds functionality, the docs should be updated. Put
 your new functionality into a function with a docstring, and add the
 feature to the list in README.rst.</p></li>
-<li><p>The pull request should work for Python 2.7, 3.5, and 3.6.</p></li>
+<li><p>The pull request should work for all the Python versions in the tox.ini file.</p></li>
 </ol>
-</div>
-<div class="section" id="tips">
-<h3>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h3>
-<p>To run a subset of tests:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m unittest tests.test_kinparse
-</pre></div>
-</div>
 </div>
 </div>
 <span id="document-authors"></span><div class="section" id="credits">
@@ -307,56 +298,62 @@ feature to the list in README.rst.</p></li>
 </div>
 <span id="document-history"></span><div class="section" id="history">
 <h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="id1">
-<h2>1.0.0 (2021-09-17)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h3>1.1.0 (2022-03-23)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Updated to handle both KiCad V5 and V6 netlist files.</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>1.0.0 (2021-09-17)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Decided this tool was mature enough that it could be called 1.0.0.</p></li>
 </ul>
-<div class="section" id="id2">
-<h3>0.1.2 (2019-02-23)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>0.1.2 (2019-02-23)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Files are now opened with latin_1 encoding to allow special symbols used by KiCad.</p></li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h3>0.1.1 (2019-01-28)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>0.1.1 (2019-01-28)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed problem where sheetpath.names and sheetpath.tstamps were not retrievable.</p></li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h3>0.1.0 (2019-01-24)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>0.1.0 (2019-01-24)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Restructured the parser to make it work with the current version of pyparsing.</p></li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3>0.0.5 (2018-12-30)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>0.0.5 (2018-12-30)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Restricted pyparsing package to version &lt; 2.3.0 because that one started breaking things.</p></li>
 </ul>
 </div>
-<div class="section" id="id6">
-<h3>0.0.4 (2018-08-27)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>0.0.4 (2018-08-27)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>KiCad V5 started putting description fields in component libsource.</p></li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h3>0.0.3 (2018-02-14)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>0.0.3 (2018-02-14)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Non-numeric revision is now allowed in the netlist rev field.</p></li>
 </ul>
 </div>
-<div class="section" id="id8">
-<h3>0.0.2 (2017-12-21)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>0.0.2 (2017-12-21)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed parse errors caused by fields with labels but no data like “(date)” .</p></li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>First release on PyPI.</p></li>
 </ul>
@@ -389,7 +386,6 @@ feature to the list in README.rst.</p></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#types-of-contributions">Types of Contributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#get-started">Get Started!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#pull-request-guidelines">Pull Request Guidelines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#tips">Tips</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-authors">Credits</a><ul>
@@ -397,16 +393,17 @@ feature to the list in README.rst.</p></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#id1">Other Contributors</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-history">History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#id1">1.0.0 (2021-09-17)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id2">0.1.2 (2019-02-23)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id3">0.1.1 (2019-01-28)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id4">0.1.0 (2019-01-24)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id5">0.0.5 (2018-12-30)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id6">0.0.4 (2018-08-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id7">0.0.3 (2018-02-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id8">0.0.2 (2017-12-21)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id9">0.0.1 (2017-07-12)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-history">History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">1.1.0 (2022-03-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">1.0.0 (2021-09-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">0.1.2 (2019-02-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">0.1.1 (2019-01-28)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">0.1.0 (2019-01-24)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id6">0.0.5 (2018-12-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id7">0.0.4 (2018-08-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id8">0.0.3 (2018-02-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id9">0.0.2 (2017-12-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id10">0.0.1 (2017-07-12)</a></li>
 </ul>
 </li>
 </ul>
@@ -418,8 +415,8 @@ feature to the list in README.rst.</p></li>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">kinparse 1.0.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">kinparse 1.0.0 documentation</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">kinparse 1.1.0a documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">kinparse 1.1.0a documentation</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
