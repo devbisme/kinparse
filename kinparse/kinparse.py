@@ -94,7 +94,7 @@ def _parse_netlist_kicad(text):
     datasheet = _paren_clause('datasheet', anystring('datasheet'))
     field = Group(_paren_clause('field', name & anystring('value')))
     fields = _paren_clause('fields', ZeroOrMore(field)('fields'))
-    property = Group(_paren_clause('property', name & value))
+    property = Group(_paren_clause('property', name & Optional(value)))
     properties = OneOrMore(property)('properties')
     lib = _paren_clause('lib', anystring('lib'))
     part = _paren_clause('part', anystring('name'))
