@@ -34,6 +34,7 @@
       (libsource (lib "Device") (part "R_US") (description "Resistor, US symbol"))
       (property (name "Sheetname") (value ""))
       (property (name "Sheetfile") (value "kicad6_test_2.kicad_sch"))
+      (property (name "exclude_from_bom"))
       (sheetpath (names "/") (tstamps "/"))
       (tstamps "0520cef8-5eb4-4ad6-9db3-e738a3afea43"))
     (comp (ref "R2")
