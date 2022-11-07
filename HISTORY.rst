@@ -4,6 +4,12 @@ History
 -------
 
 
+1.2.0 (2022-11-7)
+______________________
+
+* Updated to handle exclude_from_bom in KiCad V6 netlist files.
+
+
 1.1.0 (2022-03-23)
 ______________________
 

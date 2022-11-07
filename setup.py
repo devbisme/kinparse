@@ -7,7 +7,7 @@ import setuptools
 
 author = 'Dave Vandenbout'
 email = 'devb@xess.com'
-version = '1.1.0'
+version = '1.2.0'
 
 if 'sdist' in sys.argv[1:]:
     with open('kinparse/pckg_info.py','w') as f:
