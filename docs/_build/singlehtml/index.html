@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>kinparse 1.2.0 documentation</title>
+    <title>kinparse 1.2.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
@@ -21,8 +22,8 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">kinparse 1.2.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">kinparse 1.2.0 documentation</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">kinparse 1.2.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">kinparse 1.2.1 documentation</a></li> 
       </ul>
     </div>  
 
@@ -32,11 +33,11 @@
           <div class="body" role="main">
             
   <section id="welcome-to-kinparse-s-documentation">
-<h1>Welcome to kinparse’s documentation!<a class="headerlink" href="#welcome-to-kinparse-s-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>Welcome to kinparse’s documentation!<a class="headerlink" href="#welcome-to-kinparse-s-documentation" title="Permalink to this heading">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <span id="document-readme"></span><section id="kinparse">
-<h2>kinparse<a class="headerlink" href="#kinparse" title="Permalink to this headline">¶</a></h2>
+<h2>kinparse<a class="headerlink" href="#kinparse" title="Permalink to this heading">¶</a></h2>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/kinparse"><img alt="https://img.shields.io/pypi/v/kinparse.svg" src="https://img.shields.io/pypi/v/kinparse.svg" /></a>
 <p>This is a parser for KiCad V5 and V6 schematic netlist files that are output by EESCHEMA.
 Just pass a file containing a netlist to the <cite>parse_netlist()</cite> function and
@@ -48,7 +49,7 @@ containing all the netlist’s information.</p>
 </ul>
 </section>
 <span id="document-installation"></span><section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
 <p>This is a Python package, so you’ll need to have Python installed to use it.
 If you’re using linux, you probably already have Python.
 If you’re on Windows, you can download a Python installer from
@@ -66,7 +67,7 @@ window and typing the command:</p>
 </div>
 </section>
 <span id="document-usage"></span><section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
 <p>To use kinparse in a project:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kinparse</span> <span class="kn">import</span> <span class="n">parse_netlist</span>
 </pre></div>
@@ -190,14 +191,14 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 </ul>
 </section>
 <span id="document-contributing"></span><section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">¶</a></h2>
 <p>Contributions are welcome, and they are greatly appreciated! Every
 little bit helps, and credit will always be given.</p>
 <p>You can contribute in many ways:</p>
 <section id="types-of-contributions">
-<h3>Types of Contributions<a class="headerlink" href="#types-of-contributions" title="Permalink to this headline">¶</a></h3>
+<h3>Types of Contributions<a class="headerlink" href="#types-of-contributions" title="Permalink to this heading">¶</a></h3>
 <section id="report-bugs">
-<h4>Report Bugs<a class="headerlink" href="#report-bugs" title="Permalink to this headline">¶</a></h4>
+<h4>Report Bugs<a class="headerlink" href="#report-bugs" title="Permalink to this heading">¶</a></h4>
 <p>Report bugs at <a class="reference external" href="https://github.com/devbisme/kinparse/issues">https://github.com/devbisme/kinparse/issues</a>.</p>
 <p>If you are reporting a bug, please include:</p>
 <ul class="simple">
@@ -207,23 +208,23 @@ little bit helps, and credit will always be given.</p>
 </ul>
 </section>
 <section id="fix-bugs">
-<h4>Fix Bugs<a class="headerlink" href="#fix-bugs" title="Permalink to this headline">¶</a></h4>
+<h4>Fix Bugs<a class="headerlink" href="#fix-bugs" title="Permalink to this heading">¶</a></h4>
 <p>Look through the GitHub issues for bugs. Anything tagged with “bug”
 is open to whoever wants to implement it.</p>
 </section>
 <section id="implement-features">
-<h4>Implement Features<a class="headerlink" href="#implement-features" title="Permalink to this headline">¶</a></h4>
+<h4>Implement Features<a class="headerlink" href="#implement-features" title="Permalink to this heading">¶</a></h4>
 <p>Look through the GitHub issues for features. Anything tagged with “feature”
 is open to whoever wants to implement it.</p>
 </section>
 <section id="write-documentation">
-<h4>Write Documentation<a class="headerlink" href="#write-documentation" title="Permalink to this headline">¶</a></h4>
+<h4>Write Documentation<a class="headerlink" href="#write-documentation" title="Permalink to this heading">¶</a></h4>
 <p>kinparse could always use more documentation, whether as part of the
 official kinparse docs, in docstrings, or even on the web in blog posts,
 articles, and such.</p>
 </section>
 <section id="submit-feedback">
-<h4>Submit Feedback<a class="headerlink" href="#submit-feedback" title="Permalink to this headline">¶</a></h4>
+<h4>Submit Feedback<a class="headerlink" href="#submit-feedback" title="Permalink to this heading">¶</a></h4>
 <p>The best way to send feedback is to file an issue at <a class="reference external" href="https://github.com/devbisme/kinparse/issues">https://github.com/devbisme/kinparse/issues</a>.</p>
 <p>If you are proposing a feature:</p>
 <ul class="simple">
@@ -235,7 +236,7 @@ are welcome :)</p></li>
 </section>
 </section>
 <section id="get-started">
-<h3>Get Started!<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h3>
+<h3>Get Started!<a class="headerlink" href="#get-started" title="Permalink to this heading">¶</a></h3>
 <p>Ready to contribute? Here’s how to set up <cite>kinparse</cite> for local development.</p>
 <ol class="arabic">
 <li><p>Fork the <cite>kinparse</cite> repo on GitHub.</p></li>
@@ -274,7 +275,7 @@ $ git push origin name-of-your-bugfix-or-feature
 </ol>
 </section>
 <section id="pull-request-guidelines">
-<h3>Pull Request Guidelines<a class="headerlink" href="#pull-request-guidelines" title="Permalink to this headline">¶</a></h3>
+<h3>Pull Request Guidelines<a class="headerlink" href="#pull-request-guidelines" title="Permalink to this heading">¶</a></h3>
 <p>Before you submit a pull request, check that it meets these guidelines:</p>
 <ol class="arabic simple">
 <li><p>The pull request should include tests if you’ve added functionality.</p></li>
@@ -286,81 +287,87 @@ feature to the list in README.rst.</p></li>
 </section>
 </section>
 <span id="document-authors"></span><section id="credits">
-<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this heading">¶</a></h2>
 <section id="development-lead">
-<h3>Development Lead<a class="headerlink" href="#development-lead" title="Permalink to this headline">¶</a></h3>
+<h3>Development Lead<a class="headerlink" href="#development-lead" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Dave Vandenbout &lt;<a class="reference external" href="mailto:devb&#37;&#52;&#48;xess&#46;com">devb<span>&#64;</span>xess<span>&#46;</span>com</a>&gt;</p></li>
 </ul>
 </section>
 <section id="id1">
-<h3><a class="reference external" href="https://github.com/devbisme/kinparse/graphs/contributors">Other Contributors</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="reference external" href="https://github.com/devbisme/kinparse/graphs/contributors">Other Contributors</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 </section>
 </section>
 <span id="document-history"></span><section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
 <section id="id1">
-<h3>1.2.0 (2022-11-7)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>1.2.1 (2023-10-12)<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Ignore future module ImportError exception that aborts execution with Python 3.12.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>1.2.0 (2022-11-7)<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Updated to handle exclude_from_bom in KiCad V6 netlist files.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h3>1.1.0 (2022-03-23)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h3>1.1.0 (2022-03-23)<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Updated to handle both KiCad V5 and V6 netlist files.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h3>1.0.0 (2021-09-17)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id4">
+<h3>1.0.0 (2021-09-17)<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Decided this tool was mature enough that it could be called 1.0.0.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h3>0.1.2 (2019-02-23)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<section id="id5">
+<h3>0.1.2 (2019-02-23)<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Files are now opened with latin_1 encoding to allow special symbols used by KiCad.</p></li>
 </ul>
 </section>
-<section id="id5">
-<h3>0.1.1 (2019-01-28)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<section id="id6">
+<h3>0.1.1 (2019-01-28)<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed problem where sheetpath.names and sheetpath.tstamps were not retrievable.</p></li>
 </ul>
 </section>
-<section id="id6">
-<h3>0.1.0 (2019-01-24)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<section id="id7">
+<h3>0.1.0 (2019-01-24)<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Restructured the parser to make it work with the current version of pyparsing.</p></li>
 </ul>
 </section>
-<section id="id7">
-<h3>0.0.5 (2018-12-30)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<section id="id8">
+<h3>0.0.5 (2018-12-30)<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Restricted pyparsing package to version &lt; 2.3.0 because that one started breaking things.</p></li>
 </ul>
 </section>
-<section id="id8">
-<h3>0.0.4 (2018-08-27)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<section id="id9">
+<h3>0.0.4 (2018-08-27)<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>KiCad V5 started putting description fields in component libsource.</p></li>
 </ul>
 </section>
-<section id="id9">
-<h3>0.0.3 (2018-02-14)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<section id="id10">
+<h3>0.0.3 (2018-02-14)<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Non-numeric revision is now allowed in the netlist rev field.</p></li>
 </ul>
 </section>
-<section id="id10">
-<h3>0.0.2 (2017-12-21)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<section id="id11">
+<h3>0.0.2 (2017-12-21)<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed parse errors caused by fields with labels but no data like “(date)” .</p></li>
 </ul>
 </section>
-<section id="id11">
-<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<section id="id12">
+<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>First release on PyPI.</p></li>
 </ul>
@@ -369,7 +376,7 @@ feature to the list in README.rst.</p></li>
 </div>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
@@ -402,17 +409,18 @@ feature to the list in README.rst.</p></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-history">History</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id1">1.2.0 (2022-11-7)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id2">1.1.0 (2022-03-23)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id3">1.0.0 (2021-09-17)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id4">0.1.2 (2019-02-23)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id5">0.1.1 (2019-01-28)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id6">0.1.0 (2019-01-24)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id7">0.0.5 (2018-12-30)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id8">0.0.4 (2018-08-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id9">0.0.3 (2018-02-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id10">0.0.2 (2017-12-21)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id11">0.0.1 (2017-07-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">1.2.1 (2023-10-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">1.2.0 (2022-11-7)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">1.1.0 (2022-03-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">1.0.0 (2021-09-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">0.1.2 (2019-02-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id6">0.1.1 (2019-01-28)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id7">0.1.0 (2019-01-24)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id8">0.0.5 (2018-12-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id9">0.0.4 (2018-08-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id10">0.0.3 (2018-02-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id11">0.0.2 (2017-12-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id12">0.0.1 (2017-07-12)</a></li>
 </ul>
 </li>
 </ul>
@@ -425,13 +433,13 @@ feature to the list in README.rst.</p></li>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">kinparse 1.2.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">kinparse 1.2.0 documentation</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">kinparse 1.2.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">kinparse 1.2.1 documentation</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017-2021, Dave Vandenbout.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>
 </html>

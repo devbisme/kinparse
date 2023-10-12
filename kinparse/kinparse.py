@@ -31,8 +31,12 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import
 from builtins import open
-from future import standard_library
-standard_library.install_aliases()
+
+try:
+    from future import standard_library
+    standard_library.install_aliases()
+except ImportError:
+    pass
 
 from .py_2_3 import *
 

@@ -4,6 +4,12 @@ History
 -------
 
 
+1.2.1 (2023-10-12)
+______________________
+
+* Ignore future module ImportError exception that aborts execution with Python 3.12.
+
+
 1.2.0 (2022-11-7)
 ______________________
 
