@@ -106,7 +106,7 @@ def _parse_netlist_kicad(text):
     description = _paren_clause('description', anystring('desc'))  # Gets used here and in libparts.
     libsource = _paren_clause('libsource', lib & part & Optional(description))
     sheetpath = Group(_paren_clause('sheetpath', name & tstamp))('sheetpath')
-    comp = Group(_paren_clause('comp', ref & value & Optional(datasheet) & 
+    comp = Group(_paren_clause('comp', ref & value & Optional(datasheet) & Optional(description) & 
                     Optional(fields) & Optional(libsource) & Optional(footprint) & 
                     Optional(sheetpath) & Optional(tstamp) & Optional(properties)))
     components = _paren_clause('components', ZeroOrMore(comp)('parts'))
