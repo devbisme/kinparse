@@ -94,8 +94,15 @@ def test_kinparse_6():
     assert len(ntlst.nets) == 6
     parser_tests(ntlst)
 
-def test_kinparse_8():
+def test_kinparse_8_1():
     ntlst = parse_netlist('data/kicad8_test.net')
     assert len(ntlst.parts) == 6
     assert len(ntlst.nets) == 6
+    parser_tests(ntlst)
+
+def test_kinparse_8_2():
+    ntlst = parse_netlist('data/control_board.net')
+    assert len(ntlst.textvars) == 9
+    assert len(ntlst.parts) == 180
+    assert len(ntlst.nets) == 136
     parser_tests(ntlst)

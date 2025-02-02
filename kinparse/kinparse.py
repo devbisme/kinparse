@@ -83,6 +83,8 @@ def _parse_netlist_kicad(text):
     company = _paren_clause('company', Optional(anystring)('company'))
     rev = _paren_clause('rev', Optional(anystring)('rev'))
     txt = _paren_clause('value', anystring('text'))
+    textvar = _paren_clause('textvar', Group(name + anystring('value')))
+    textvars = Group(ZeroOrMore(textvar))('textvars')
     comment = _paren_clause('comment', Group(number & txt))
     comments = Group(OneOrMore(comment))('comments')
     title_block = _paren_clause('title_block', Optional(title) &
@@ -91,6 +93,7 @@ def _parse_netlist_kicad(text):
     sheet = _paren_clause('sheet', Group(number + name + tstamp + Optional(title_block)))
     sheets = OneOrMore(sheet)('sheets')
     design = (_paren_clause('design', Optional(source) & Optional(date) &
+                        textvars &
                         Optional(tool) & Optional(sheets)))
 
     # Components section.
