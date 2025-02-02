@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>kinparse 1.2.2 documentation</title>
+    <title>kinparse 1.2.3 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=16cbd302" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=def86cc0" />
     
-    <script src="_static/documentation_options.js?v=1855bd1d"></script>
-    <script src="_static/doctools.js?v=92e14aea"></script>
-    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/documentation_options.js?v=91231cdd"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -19,8 +19,8 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">kinparse 1.2.2 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">kinparse 1.2.2 documentation</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">kinparse 1.2.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">kinparse 1.2.3 documentation</a></li> 
       </ul>
     </div>  
 
@@ -88,6 +88,10 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 <li><p><code class="docutils literal notranslate"><span class="pre">nlst.source</span></code>: File name for the top-level schematic that generated this netlist.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nlst.date</span></code>: Date the schematic was created.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nlst.tool</span></code>: Tool used to create the schematic.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nlst.textvars</span></code>: List of text variables used in the schematic.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(nlst.textvars)</span></code>: Number of text variables in the list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nlst.textvars[0].name</span></code>: Name of the first text variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nlst.textvars[0].value</span></code>: Value of the first text variable.</p></li>
 </ul>
 </dd>
 </dl>
@@ -150,7 +154,7 @@ and return a <a class="reference external" href="https://pypi.python.org/pypi/py
 </dl>
 </li>
 <li><dl class="simple">
-<dt>parts:</dt><dd><ul>
+<dt>Parts:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">nlst.parts</span></code>: List of part instances used in the netlist.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">len(nlst.parts)</span></code>: Number of parts used in the list.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nlst.parts[0].ref</span></code>: Reference designator for the first part.</p></li>
@@ -298,79 +302,85 @@ feature to the list in README.rst.</p></li>
 <span id="document-history"></span><section id="history">
 <h2>History<a class="headerlink" href="#history" title="Link to this heading">¶</a></h2>
 <section id="id1">
-<h3>1.2.2 (2024-09-22)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<h3>1.2.3 (2025-02-01)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed to handle textvar fields in KiCad V8 netlist files.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>1.2.2 (2024-09-22)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Updated to handle KiCad V8 netlist files.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h3>1.2.1 (2023-10-12)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<section id="id3">
+<h3>1.2.1 (2023-10-12)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Ignore future module ImportError exception that aborts execution with Python 3.12.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h3>1.2.0 (2022-11-7)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<section id="id4">
+<h3>1.2.0 (2022-11-7)<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Updated to handle exclude_from_bom in KiCad V6 netlist files.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h3>1.1.0 (2022-03-23)<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<section id="id5">
+<h3>1.1.0 (2022-03-23)<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Updated to handle both KiCad V5 and V6 netlist files.</p></li>
 </ul>
 </section>
-<section id="id5">
-<h3>1.0.0 (2021-09-17)<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<section id="id6">
+<h3>1.0.0 (2021-09-17)<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Decided this tool was mature enough that it could be called 1.0.0.</p></li>
 </ul>
 </section>
-<section id="id6">
-<h3>0.1.2 (2019-02-23)<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<section id="id7">
+<h3>0.1.2 (2019-02-23)<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Files are now opened with latin_1 encoding to allow special symbols used by KiCad.</p></li>
 </ul>
 </section>
-<section id="id7">
-<h3>0.1.1 (2019-01-28)<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<section id="id8">
+<h3>0.1.1 (2019-01-28)<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed problem where sheetpath.names and sheetpath.tstamps were not retrievable.</p></li>
 </ul>
 </section>
-<section id="id8">
-<h3>0.1.0 (2019-01-24)<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<section id="id9">
+<h3>0.1.0 (2019-01-24)<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Restructured the parser to make it work with the current version of pyparsing.</p></li>
 </ul>
 </section>
-<section id="id9">
-<h3>0.0.5 (2018-12-30)<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<section id="id10">
+<h3>0.0.5 (2018-12-30)<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Restricted pyparsing package to version &lt; 2.3.0 because that one started breaking things.</p></li>
 </ul>
 </section>
-<section id="id10">
-<h3>0.0.4 (2018-08-27)<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<section id="id11">
+<h3>0.0.4 (2018-08-27)<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>KiCad V5 started putting description fields in component libsource.</p></li>
 </ul>
 </section>
-<section id="id11">
-<h3>0.0.3 (2018-02-14)<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<section id="id12">
+<h3>0.0.3 (2018-02-14)<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Non-numeric revision is now allowed in the netlist rev field.</p></li>
 </ul>
 </section>
-<section id="id12">
-<h3>0.0.2 (2017-12-21)<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<section id="id13">
+<h3>0.0.2 (2017-12-21)<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed parse errors caused by fields with labels but no data like “(date)” .</p></li>
 </ul>
 </section>
-<section id="id13">
-<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<section id="id14">
+<h3>0.0.1 (2017-07-12)<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>First release on PyPI.</p></li>
 </ul>
@@ -412,19 +422,20 @@ feature to the list in README.rst.</p></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#document-history">History</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id1">1.2.2 (2024-09-22)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id2">1.2.1 (2023-10-12)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id3">1.2.0 (2022-11-7)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id4">1.1.0 (2022-03-23)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id5">1.0.0 (2021-09-17)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id6">0.1.2 (2019-02-23)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id7">0.1.1 (2019-01-28)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id8">0.1.0 (2019-01-24)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id9">0.0.5 (2018-12-30)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id10">0.0.4 (2018-08-27)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id11">0.0.3 (2018-02-14)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id12">0.0.2 (2017-12-21)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id13">0.0.1 (2017-07-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">1.2.3 (2025-02-01)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">1.2.2 (2024-09-22)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">1.2.1 (2023-10-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">1.2.0 (2022-11-7)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">1.1.0 (2022-03-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id6">1.0.0 (2021-09-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id7">0.1.2 (2019-02-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id8">0.1.1 (2019-01-28)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id9">0.1.0 (2019-01-24)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id10">0.0.5 (2018-12-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id11">0.0.4 (2018-08-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id12">0.0.3 (2018-02-14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id13">0.0.2 (2017-12-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id14">0.0.1 (2017-07-12)</a></li>
 </ul>
 </li>
 </ul>
@@ -437,8 +448,8 @@ feature to the list in README.rst.</p></li>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">kinparse 1.2.2 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">kinparse 1.2.2 documentation</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">kinparse 1.2.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">kinparse 1.2.3 documentation</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

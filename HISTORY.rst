@@ -4,6 +4,12 @@ History
 -------
 
 
+1.2.3 (2025-02-01)
+______________________
+
+* Fixed to handle textvar fields in KiCad V8 netlist files.
+
+
 1.2.2 (2024-09-22)
 ______________________
 

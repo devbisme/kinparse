@@ -20,6 +20,10 @@ Then you can query the parsing object as shown below to get information about th
     * ``nlst.source``: File name for the top-level schematic that generated this netlist.
     * ``nlst.date``: Date the schematic was created.
     * ``nlst.tool``: Tool used to create the schematic.
+    * ``nlst.textvars``: List of text variables used in the schematic.
+    * ``len(nlst.textvars)``: Number of text variables in the list.
+    * ``nlst.textvars[0].name``: Name of the first text variable.
+    * ``nlst.textvars[0].value``: Value of the first text variable.
 
 * Schematic sheet information:
     * ``nlst.sheets``: List of sheets for the schematic.
@@ -66,7 +70,7 @@ Then you can query the parsing object as shown below to get information about th
     * ``len(nlst.libparts[0].aliases)``: List of aliases for the first part.
     * ``nlst.libparts[0].aliases[0]``: First alias for the first part.
 
-* parts:
+* Parts:
     * ``nlst.parts``: List of part instances used in the netlist.
     * ``len(nlst.parts)``: Number of parts used in the list.
     * ``nlst.parts[0].ref``: Reference designator for the first part.
