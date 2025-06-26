@@ -7,7 +7,7 @@ import setuptools
 
 author = 'Dave Vandenbout'
 email = 'devb@xess.com'
-version = '1.2.3'
+version = '1.2.4'
 
 if 'sdist' in sys.argv[1:]:
     with open('kinparse/pckg_info.py','w') as f:
@@ -51,7 +51,6 @@ setup(
         "Changelog": "https://github.com/devbisme/kinparse/blob/master/HISTORY.rst",
         "Tracker": "https://github.com/devbisme/kinparse/issues",
     },
-#    packages=['kinparse',],
     packages=setuptools.find_packages(exclude=['tests']),
     entry_points={'console_scripts':['kinparse = kinparse.__main__:main']},
     package_dir={'kinparse':
@@ -69,7 +68,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
         "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
     ],
